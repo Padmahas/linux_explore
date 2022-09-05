@@ -1,0 +1,51 @@
+1. Sort by Memory usage percentage ascending. Replace the "%MEM" with other field values to sort based on that field.
+  Command: "top -o %MEM"
+
+top - 07:25:45 up 2 days, 21:27,  2 users,  load average: 0.04, 0.02, 0.04
+Tasks: 110 total,   1 running, 109 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  0.2 sy,  0.0 ni, 99.8 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :   7947.0 total,    120.8 free,    537.2 used,   7289.0 buff/cache
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7148.0 avail Mem
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+    896 mysql     20   0 1788872 379952  26056 S   0.3   4.7  18:24.27 mysqld
+    715 root      20   0  874480  33732  16680 S   0.0   0.4   0:12.08 snapd
+    395 root      rt   0  289316  27364   9076 S   0.3   0.3   0:22.89 multipathd
+    363 root      19  -1   56012  21048  19944 S   0.0   0.3   0:00.90 systemd-journal
+    809 root      20   0  110088  20168  12028 S   0.0   0.2   0:00.07 unattended-upgr
+    705 root      20   0   33124  18932  10084 S   0.0   0.2   0:00.13 networkd-dispat
+   1506 root      20   0  295940  16684  13772 S   0.0   0.2   0:01.39 packagekitd
+   1109 root      20   0 1318268  16120   5840 S   0.0   0.2   0:08.14 ssm-agent-worke
+    708 root      20   0 1380408  12564   6092 S   0.0   0.2   0:13.08 amazon-ssm-agen
+    649 systemd+  20   0   25352  11568   7536 S   0.0   0.1   0:00.48 systemd-resolve
+    725 root      20   0  392528  11516   9468 S   0.0   0.1   0:00.25 udisksd
+      1 root      20   0  100736  11048   7756 S   0.0   0.1   0:05.70 systemd
+  17126 root      20   0   17172  10616   8444 S   0.0   0.1   0:00.05 sshd
+    775 root      20   0  243188   9764   8024 S   0.0   0.1   0:00.07 ModemManager
+  17129 padmaha+  20   0   16856   9008   7516 S   0.0   0.1   0:00.04 systemd
+    899 root      20   0   15420   8584   6956 S   0.0   0.1   0:00.01 sshd
+    706 root      20   0  235992   8560   6600 S   0.0   0.1   0:00.06 polkitd
+  17213 padmaha+  20   0   17304   7872   5428 S   0.0   0.1   0:00.13 sshd
+    647 systemd+  20   0   16068   7372   6360 S   0.0   0.1   0:01.58 systemd-network
+    398 root      20   0   23420   6668   4412 S   0.0   0.1   0:00.45 systemd-udevd
+    719 root      20   0   15440   6632   5680 S   0.0   0.1   0:00.38 systemd-logind
+  17305 padmaha+  20   0    9360   5272   3364 S   0.0   0.1   0:00.05 bash
+    707 syslog    20   0  222400   5264   4180 S   0.0   0.1   0:00.08 rsyslogd
+  17347 padmaha+  20   0    9228   5088   3296 S   0.0   0.1   0:00.02 bash
+    690 message+  20   0    8752   4528   3704 S   0.0   0.1   0:00.24 dbus-daemon
+  17360 padmaha+  20   0   10912   3884   3172 R   0.0   0.0   0:00.52 top
+  17130 padmaha+  20   0  103788   3784      0 S   0.0   0.0   0:00.00 (sd-pam)
+    712 _chrony   20   0   18888   3360   2748 S   0.0   0.0   0:04.97 chronyd
+
+
+2. To clear "buff/cache" memory consumption, which could possibly slowing down your system. Note: run this command after switching completely to root account.
+  Command: sync; echo 3 > /proc/sys/vm/drop_caches
+  
+3. Show line number in "less" command.
+  a. Either open less with "-n " option
+      less -n path/to/file
+  b. If you are already inside less, press "-N"
+  
+4. Search for a text in large file.
+  a. To also print line number, use "-n" option.
+  Command: grep -n "TEXT_TO_SEARCH" INPUT_FILE_NAME > OUTPUT_FILE_NAME
