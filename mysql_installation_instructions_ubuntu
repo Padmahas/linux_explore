@@ -1,0 +1,37 @@
+1. Download binary package from Mysql official downloads page "https://dev.mysql.com/downloads/mysql/"
+2. Extract into /opt/mysql_VERSION folder.
+3. sudo groupadd mysql
+4. sudo useradd -r -g mysql -s /bin/false mysql
+5. cd /usr/local/
+6. sudo ln -s /opt/mysql_8_0_30/ mysql
+7. cd mysql
+8. mkdir mysql-files
+9. sudo chown mysql:mysql mysql-files
+10. sudo chmod 750 mysql-files
+11. bin/mysqld --initialize --user=mysql
+12. bin/mysql_ssl_rsa_setup
+13. bin/mysqld_safe --user=mysql &
+14. export PATH=$PATH:/usr/local/mysql/bin
+
+15.
+## Add the path and Mysql service starting commands to /etc/environment to start the Mysql easily next time.
+sudo vi /etc/environment
+
+## In the end of PATH variable, add below line.
+:/usr/local/mysql/bin
+
+## In the end of "environment" file, add below line.
+start_mysql="mysqld_safe --user=mysql &"
+
+
+16.
+## If you get below error, install "libncurses5" library.
+`mysql: error while loading shared libraries: libtinfo.so.5: cannot open shared object file: No such file or directory`
+
+sudo apt install libncurses5
+
+17. sudo su
+18. mysql -u root -p
+19. ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
+
+From next time you can login with both username and password as root.
