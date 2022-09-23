@@ -20,8 +20,9 @@ sudo vi /etc/environment
 ## In the end of PATH variable, add below line.
 :/usr/local/mysql/bin
 
-## In the end of "environment" file, add below line.
+## In the end of "environment" file, add below lines.
 start_mysql="mysqld_safe --user=mysql &"
+stop_mysql="/usr/local/mysql/support-files/mysql.server stop"
 
 
 16.
