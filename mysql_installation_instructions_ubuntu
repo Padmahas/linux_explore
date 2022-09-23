@@ -26,7 +26,8 @@ start_mysql="mysqld_safe --user=mysql &"
 
 16.
 ## If you get below error, install "libncurses5" library.
-`mysql: error while loading shared libraries: libtinfo.so.5: cannot open shared object file: No such file or directory`
+## `mysql: error while loading shared libraries: libtinfo.so.5: cannot open shared object file: No such file or directory`
+## Reference: https://stackoverflow.com/questions/48674104/clang-error-while-loading-shared-libraries-libtinfo-so-5-cannot-open-shared-o
 
 sudo apt install libncurses5
 
