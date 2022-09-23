@@ -21,7 +21,9 @@ sudo vi /etc/environment
 :/usr/local/mysql/bin
 
 ## In the end of "environment" file, add below lines.
-start_mysql="mysqld_safe --user=mysql &"
+## Adding ampersand in the end, inside "environment" file has thrown error "Too many arguments (first extra is '&')" and server was terminating.
+## Hence append the ampersand symbol from the terminal. Like, "$start_mysql &"
+start_mysql="mysqld_safe --user=mysql"
 stop_mysql="/usr/local/mysql/support-files/mysql.server stop"
 
 
