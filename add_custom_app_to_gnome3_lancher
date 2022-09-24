@@ -1,0 +1,20 @@
+1. To show your custom application in Gnome 3 launcher, add "APP_NAME.desktop" inside "/usr/share/applications".
+Example for adding Spring Tool Suite to Gnome 3 launcher.
+
+File name: spring.desktop
+
+[Desktop Entry]
+Name=Spring IDE
+Comment=Develop Spring Applications
+Icon=spring-icon
+Exec=/media/padmahasa/personal/sts-4.14.1.RELEASE/SpringToolSuite4
+Terminal=false
+Type=Application
+Categories=Utility
+StartupNotify=true
+Name[en_US]=Spring IDE
+
+
+2. Add ".svg" formatted icon into below paths.
+/usr/share/icons/hicolor/scalable/apps/spring-icon.svg
+/usr/share/icons/spring-icon.svg
