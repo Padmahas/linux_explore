@@ -49,3 +49,7 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7148.0 avail Mem
 4. Search for a text in large file.
   a. To also print line number, use "-n" option.
   Command: grep -n "TEXT_TO_SEARCH" INPUT_FILE_NAME > OUTPUT_FILE_NAME
+  
+5. Search for a file in the given path.
+  a. To find a file "spring-icon.svg" in root folder
+  command: sudo find / -iname "spring-icon*"
