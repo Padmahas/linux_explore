@@ -45,6 +45,7 @@ docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
 Get details of a volume like Mount point etc.
 docker volume inspect VOLUME_NAME
 docker volume inspect todo-db
+-------------------------- ***** -------------------------------
 
 ----------------------------------------------------------------
 Bind Volumes
@@ -56,3 +57,21 @@ docker run -dp 3000:3000 \
      -w /app -v "$(pwd):/app" \
      node:12-alpine \
      sh -c "yarn install && yarn run dev"
+
+-------------------------- ***** -------------------------------
+
+Create the network
+docker network create todo-app
+
+Start a MySQL container and attach it to the network. We’re also going to define a few environment variables that the database will use to initialize the database (see the “Environment Variables” section in the MySQL Docker Hub listing).
+docker run -d \
+     --network todo-app --network-alias mysql \
+     -v todo-mysql-data:/var/lib/mysql \
+     -e MYSQL_ROOT_PASSWORD=secret \
+     -e MYSQL_DATABASE=todos \
+     mysql:5.7
+
+Connect a container to the network which another container is running. In the below example, we are connecting to the network that "todo-app" is running on.
+Start a new container using the nicolaka/netshoot image. Make sure to connect it to the same network
+docker run -it --network todo-app nicolaka/netshoot
+
