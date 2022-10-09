@@ -30,3 +30,19 @@ docker run -dp 3000:3000 YOUR-USER-NAME/getting-started
 
 Execute command inside container
 docker exec <container-id> cat /data.txt
+
+Create a Volume
+docker volume create VOLUME_NAME
+eg: docker volume create todo-db
+
+Start the container with mount volume
+Start the todo app container, but add the -v flag to specify a volume mount. We will use the named volume and mount it to /etc/todos, which will capture all files created at the path
+docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
+
+----------------------------------------------------------------
+Named Volume commands
+----------------------------------------------------------------
+
+Get details of a volume like Mount point etc.
+docker volume inspect VOLUME_NAME
+docker volume inspect todo-db
