@@ -1,0 +1,32 @@
+Run the container "getting-started"
+docker run -dp 80:80 docker/getting-started
+
+To build the new container with updated code.
+docker build -t getting-started .
+
+To see the id of running containers.
+docker ps
+
+To Stop the container
+docker stop <the-container-id>
+
+To Remove the container
+docker rm <the-container-id>
+
+Share the contaner over public repository
+docker push <namespace>/getting-started
+eg: docker push padmahasa/getting-started
+
+Login to Docker Hub
+docker login -u YOUR-USER-NAME
+eg: docker login -u padmahasa
+
+Create Docker tag
+docker tag getting-started YOUR-USER-NAME/getting-started
+eg: docker tag getting-started padmahasa/getting-started
+
+Run image on a new instance
+docker run -dp 3000:3000 YOUR-USER-NAME/getting-started
+
+Execute command inside container
+docker exec <container-id> cat /data.txt
