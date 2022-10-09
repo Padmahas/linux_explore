@@ -31,6 +31,9 @@ docker run -dp 3000:3000 YOUR-USER-NAME/getting-started
 Execute command inside container
 docker exec <container-id> cat /data.txt
 
+----------------------------------------------------------------
+Named Volume commands
+----------------------------------------------------------------
 Create a Volume
 docker volume create VOLUME_NAME
 eg: docker volume create todo-db
@@ -39,10 +42,17 @@ Start the container with mount volume
 Start the todo app container, but add the -v flag to specify a volume mount. We will use the named volume and mount it to /etc/todos, which will capture all files created at the path
 docker run -dp 3000:3000 -v todo-db:/etc/todos getting-started
 
-----------------------------------------------------------------
-Named Volume commands
-----------------------------------------------------------------
-
 Get details of a volume like Mount point etc.
 docker volume inspect VOLUME_NAME
 docker volume inspect todo-db
+
+----------------------------------------------------------------
+Bind Volumes
+----------------------------------------------------------------
+Bind mount source code and start container. Make app directory (Node application) as working so all commands will run from "app" directory with "-w" option.
+node:12-alpine is a base image to refer.
+sh -c is the shell to use execute commnads (alpine node doesn't have bash shell to execute commands)
+docker run -dp 3000:3000 \
+     -w /app -v "$(pwd):/app" \
+     node:12-alpine \
+     sh -c "yarn install && yarn run dev"
