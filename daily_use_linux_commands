@@ -58,4 +58,10 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7148.0 avail Mem
   
 6. Search for a file in the given path.
   a. To find a file "spring-icon.svg" in root folder
-  command: sudo find / -iname "spring-icon*"
+  Command: sudo find / -iname "spring-icon*"
+
+7. Notepad++
+  a. Make all data into single line.
+  Command: Open replace dialog box (CTRL + H)
+          For find give : (\h*\R)+
+          For replace give : \x20
