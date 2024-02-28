@@ -49,7 +49,13 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7148.0 avail Mem
 4. Search for a text in large file.
   a. To also print line number, use "-n" option.
   Command: grep -n "TEXT_TO_SEARCH" INPUT_FILE_NAME > OUTPUT_FILE_NAME
+  b. To print line number of first match and stop searching use "-m NUM" option.
+  Command: grep -n -m 1 "TEXT_TO_SEARCH" INPUT_FILE_NAME
+
+5. Copy data between range of line numbers.
+  a. sed -n 'FROM_LINE_NUM,TO_LINE_NUMp' INPUT_FILE_NAME > OUTPUT_FILE_NAME
+  Command: sed -n '49669348,49673280p' error.log > searched.log
   
-5. Search for a file in the given path.
+6. Search for a file in the given path.
   a. To find a file "spring-icon.svg" in root folder
   command: sudo find / -iname "spring-icon*"
