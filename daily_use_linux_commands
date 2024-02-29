@@ -65,3 +65,7 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7148.0 avail Mem
   Command: Open replace dialog box (CTRL + H)
           For find give : (\h*\R)+
           For replace give : \x20
+
+8. MySQL
+  a. Execute single query directly from command line.
+  Command: mysql -h HOST_NAME -u USER_NAME -pPASSWORD DB_NAME -e 'SHOW TABLES'
