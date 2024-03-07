@@ -69,3 +69,6 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7148.0 avail Mem
 8. MySQL
   a. Execute single query directly from command line.
   Command: mysql -h HOST_NAME -u USER_NAME -pPASSWORD DB_NAME -e 'SHOW TABLES'
+
+9. To run shell scripts in Linux, written in Windows, use below command to replace Windows related character.
+  Command: sed -i -e 's/\r$//' *.sh
