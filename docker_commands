@@ -83,4 +83,8 @@ Docker logs
      docker logs -f -n 100 CONTAINER_TAG_NAME
 
 2. Show logs between time range.
+     Relative:
      docker logs --since 120m --until 40m CONTAINER_TAG_NAME
+
+     Timestamp:
+     docker logs --since 2024-03-18T14:04 --until 2024-03-18T14:25 CONTAINER_TAG_NAME
