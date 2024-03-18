@@ -75,3 +75,12 @@ Connect a container to the network which another container is running. In the be
 Start a new container using the nicolaka/netshoot image. Make sure to connect it to the same network
 docker run -it --network todo-app nicolaka/netshoot
 
+-------------------------- ***** -------------------------------
+----------------------------------------------------------------
+Docker logs
+----------------------------------------------------------------
+1. Show last 100 lines and continue to tail the logs.
+     docker logs -f -n 100 CONTAINER_TAG_NAME
+
+2. Show logs between time range.
+     docker logs --since 120m --until 40m CONTAINER_TAG_NAME
