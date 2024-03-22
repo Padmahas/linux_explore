@@ -66,6 +66,23 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7148.0 avail Mem
           For find give : (\h*\R)+
           For replace give : \x20
 
+  b. Find space and replace with new line.
+  Command: Open replace dialog box (CTRL + H) and keep "search mode" in "Regular expression" mode.
+          For find give : \s+
+          For replace give : \n
+
+          eg: Inpupt:
+          word1 word2 word3
+          word4 word5 word6
+
+              Ouput:
+          word1
+          word2
+          word3
+          word4
+          word5
+          word6
+
 8. MySQL
   a. Execute single query directly from command line.
   Command: mysql -h HOST_NAME -u USER_NAME -pPASSWORD DB_NAME -e 'SHOW TABLES'
