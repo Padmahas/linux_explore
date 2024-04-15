@@ -82,6 +82,9 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7148.0 avail Mem
           word4
           word5
           word6
+  c. Find empty lines and remove them
+  Command: For find give : ^\r\n
+           For replace give : NOTHING
 
 8. MySQL
   a. Execute single query directly from command line.
