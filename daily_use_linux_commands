@@ -92,3 +92,9 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7148.0 avail Mem
 
 9. To run shell scripts in Linux, written in Windows, use below command to replace Windows related character.
   Command: sed -i -e 's/\r$//' *.sh
+
+10. To list all human users in the Linux
+  Command: awk -F: '$3 >= 1000 && $7 !~ /(nologin|false)$/ && $6 ~ /^\/home/ {print $1}' /etc/passwd
+
+11. To list all sudo users in the Linux
+  Command: getent group sudo
