@@ -51,6 +51,14 @@ MiB Swap:      0.0 total,      0.0 free,      0.0 used.   7148.0 avail Mem
   Command: grep -n "TEXT_TO_SEARCH" INPUT_FILE_NAME > OUTPUT_FILE_NAME
   b. To print line number of first match and stop searching use "-m NUM" option.
   Command: grep -n -m 1 "TEXT_TO_SEARCH" INPUT_FILE_NAME
+  c. Case-insensitive
+  Command: grep -ni 'TEXT_TO_SEARCH' logfile.log
+  d. For compressed logs (.gz):
+  Command: zgrep -n 'TEXT_TO_SEARCH' logfile.log.gz
+  e. If the log is huge and you want a count first
+  Command: grep -c 'TEXT_TO_SEARCH' logfile.log
+  f. Counts in compressed logs (.gz):
+  Command: zgrep -c 'TEXT_TO_SEARCH' logfile.log.gz
 
 5. Copy data between range of line numbers.
   a. sed -n 'FROM_LINE_NUM,TO_LINE_NUMp' INPUT_FILE_NAME > OUTPUT_FILE_NAME
