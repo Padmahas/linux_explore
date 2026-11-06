@@ -1,3 +1,12 @@
+On the fly use container and delete
+MySQL: Non-Docker or remote instances
+docker run -it --rm mysql mysql -hHOST-NAME-OR-IP -uUSER-NAME -p
+
+Add "--network some-network" to access another container running on some network but in the same system.
+
+Apache httpd:
+docker run -dit --name my-bkp-end-app -p 8080:80 -v "$PWD":/usr/local/apache2/htdocs/ httpd:2.4
+
 Run the container "getting-started"
 docker run -dp 80:80 docker/getting-started
 
